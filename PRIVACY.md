@@ -1,6 +1,6 @@
 # Privacy
 
-Applies to the source and extension package for 1.5.2-rc.1.
+Applies to the source and extension package for 1.5.2.
 
 The extension reads compatible variation tables and edits price and SKU inputs.
 It contains no explicit network requests, telemetry, analytics, remote libraries

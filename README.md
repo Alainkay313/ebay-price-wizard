@@ -3,9 +3,10 @@
 Preview and fill CCTV kit variation prices and SKUs in compatible eBay listing grids.
 Built by **Ali Karmand** from hands-on marketplace operations work.
 
-**Release candidate: 1.5.2-rc.1.** Local tests cover calculation and input handling.
-This release has not been validated against a live eBay seller listing. Review every
-generated value before saving a listing.
+**Stable release: 1.5.2.** Published following the maintainer's confirmation that
+the tool works and approval to skip additional live testing. Automated tests cover
+calculation and input handling; independent Chrome/eBay integration testing was
+not completed. Review every generated value before saving a listing.
 
 [Download releases](https://github.com/Alainkay313/ebay-price-wizard/releases) ·
 [Product page](https://karmand.co.uk/tools/ebay-price-wizard) ·

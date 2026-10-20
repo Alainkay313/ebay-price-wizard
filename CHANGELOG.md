@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.5.2 — 2026-10-20
+
+- Promote 1.5.2-rc.1 with maintainer approval and confirmation of working behavior.
+- Update manifest/display version and documentation; runtime logic is unchanged.
+- Automated checks pass. Additional Chrome/eBay integration testing was waived by
+  the maintainer and was not independently completed.
+
 ## 1.5.2-rc.1 — 2026-10-20
 
 First standalone public release candidate. Chrome's numeric manifest version is

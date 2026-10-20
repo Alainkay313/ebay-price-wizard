@@ -1,6 +1,11 @@
 # Validation record — 2026-10-20
 
-Release candidate: **1.5.2-rc.1** (manifest version 1.5.2).
+Release: **1.5.2** (manifest version 1.5.2).
+
+The maintainer confirmed that the tool works, requested skipping additional live
+installation/editor testing, and approved stable publication. This is maintainer
+acceptance, not an independently observed integration-test result. Runtime logic
+is unchanged from 1.5.2-rc.1; only displayed version text changed.
 
 ## Completed
 
@@ -38,4 +43,4 @@ Unit tests use DOM stubs and do not establish browser/editor integration.
 4. Check SKU tokens, camera rules, Save, Stop and Undo.
 5. On a disposable draft listing, verify headers, iframe behavior, all scrolled
    rows and that eBay retains the edits. Do not publish a listing just to test.
-6. Record browser version and editor configuration before declaring a stable release.
+6. Record browser version and editor configuration when completing future integration validation.

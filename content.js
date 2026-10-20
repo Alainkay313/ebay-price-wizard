@@ -548,7 +548,7 @@
     panel.innerHTML = `
       <div class="pw-header" id="pw-drag-handle">
         🧙 eBay Price Wizard
-        <span>v1.5.2-rc.1 · CCTV Kit Pricing</span>
+        <span>v1.5.2 · CCTV Kit Pricing</span>
       </div>
       <div class="pw-body">
 
@@ -1462,7 +1462,7 @@
         skuOut(
           'No rows were processed at all.\n' +
           '1) Reload this eBay page (F5) — after updating the extension the page MUST be reloaded.\n' +
-          '2) Check the panel header shows v1.5.2-rc.1.\n' +
+          '2) Check the panel header shows v1.5.2.\n' +
           '3) Then open SKU Wizard again and Run.'
         );
         return;
