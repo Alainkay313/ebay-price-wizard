@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>eBay Price Wizard 1.5.2-rc.1 — User Guide</title>
+<style>body{font:16px/1.65 system-ui,sans-serif;max-width:820px;margin:40px auto;padding:0 24px;color:#243444}h1,h2{color:#0064d2}code{background:#edf2f7;padding:2px 5px}.notice{background:#fff3cd;padding:16px;border-radius:8px}a{color:#0064d2}</style>
+<h1>eBay Price Wizard</h1>
+<p>Version 1.5.2-rc.1 · Independent CCTV variation pricing and SKU helper.</p>
+<p class="notice"><strong>Release candidate.</strong> Calculations and input handling
+have automated local tests. Live eBay installation and editor compatibility have
+not been validated for this release. Review every generated value before saving.</p>
+<h2>Install</h2>
+<ol><li>Extract the extension ZIP into a permanent folder.</li>
+<li>Open <code>chrome://extensions</code> in Chrome and enable Developer mode.</li>
+<li>Choose Load unpacked and select the folder containing <code>manifest.json</code>.</li>
+<li>Reload the eBay listing page and open its variations table. There is no toolbar popup.</li></ol>
+<h2>Calculate prices</h2>
+<ol><li>Click Wizard. Enter prices for the 4-, 8-, 16- or 32-channel recorders you sell; leave other channels blank.</li>
+<li>Enter the price of one camera.</li>
+<li>Select the HDD capacities used in the listing and verify or edit their prices.
+Detected capacities are selected from currently rendered rows only. Custom capacities require a price.</li>
+<li>Leave the promotional field blank, or enter a value from 0 to 83.33. Click Done.</li>
+<li>Click Preview. It checks the first ten currently rendered rows and shows calculated prices without writing them.</li>
+<li>Keep Only fill empty / zero prices enabled to preserve existing prices. Click Run when ready.</li>
+<li>Inspect all rows, including skipped rows, then use eBay's own save flow if satisfied.</li></ol>
+<p><code>base = recorder + HDD + cameras × camera price</code><br>
+<code>final = base × 100 / (100 − promotional input × 1.2)</code></p>
+<p>Synthetic example: £100 recorder + £50 HDD + four £20 cameras = £230.
+Promotional input 10 gives £230 ÷ 0.88 = <strong>£261.36</strong>.
+This is not a simple 12% markup or an eBay fee/tax calculator. Values near 83.33 produce very large results.</p>
+<h2>Build SKUs</h2>
+<p>Open SKU Wizard. Configure included columns, order, token mappings, patterns and
+separator. <code>{v}</code> means the mapped token; <code>{n}</code> means the first
+number in the option. Empty tokens omit an option.</p>
+<p>Example: recorder token <code>DVR-8CH</code>, camera token <code>CAM</code> with
+pattern <code>{n}x{v}</code>, HDD token <code>2TB</code> and separator <code>+</code>
+produce <code>DVR-8CH+4xCAM+2TB</code>.</p>
+<p>Preview first, then Run. Only-empty is enabled by default. Camera rules can skip
+quantities above recorder capacity, limit to a list such as <code>0-2-4</code>
+(three allowed values, not a range), or omit zero-camera rows.</p>
+<p>Save stores SKU settings in the current eBay origin's localStorage. Undo is limited
+to retained inputs from the last run; it cannot reliably undo recycled rows or a
+saved listing. Price filling has no Undo.</p>
+<h2>Storage and permissions</h2>
+<p>The script runs on matching HTTPS eBay UK and US pages and frames. It has no
+additional API permissions, background worker, analytics or explicit network requests.
+Price setup stays in page memory. Saved SKU configuration uses
+<code>skuWizardCfg_v2</code> in site localStorage, accessible to other scripts on that
+origin. Do not store secrets there. eBay's own code can process changed inputs.</p>
+<h2>Limitations and troubleshooting</h2>
+<ul><li>English CCTV table headers and editable inputs are required; not every editor is supported.</li>
+<li>If the panel does not appear, reload after opening the editor. Grid detection polls for about 30 seconds.</li>
+<li>If rows are skipped, check recorder prices, enabled HDDs, HDD costs and recognizable camera quantities.</li>
+<li>Automatic scrolling is best effort on virtualized tables. Inspect all rows manually.</li>
+<li>Do not run price and SKU filling together. Stop a run before changing setup.</li></ul>
+<p><a href="https://github.com/Alainkay313/ebay-price-wizard">Source and full documentation</a> ·
+<a href="https://github.com/Alainkay313/ebay-price-wizard/issues">Report an issue with anonymized data</a> ·
+<a href="https://karmand.co.uk/tools/ebay-price-wizard">Product page</a> ·
+<a href="https://karmand.co.uk/case-studies/ebay-price-wizard">Case study</a></p>
+<p>MIT © 2026 Ali Karmand. Independent project; not affiliated with, endorsed by or
+sponsored by eBay. eBay is a trademark of its respective owner.</p>
+</html>

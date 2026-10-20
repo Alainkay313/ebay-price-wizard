@@ -1,0 +1,14 @@
+node_modules/
+dist/
+coverage/
+*.zip
+*.log
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

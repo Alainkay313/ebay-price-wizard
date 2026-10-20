@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>eBay Price Wizard — synthetic test fixture</title>
+<style>
+body{font:16px system-ui,sans-serif;margin:36px;color:#16324a;background:#f5f7fb}
+main{max-width:850px;margin-right:370px}h1{font-size:30px}
+table{border-collapse:collapse;width:100%;background:white}
+th,td{padding:12px;border:1px solid #d4dde6;text-align:left}
+td input{width:100px;padding:7px;border:1px solid #a9b6c5}
+.notice{padding:16px;background:#fff2c9;border-radius:8px;line-height:1.6}
+</style>
+<main>
+<h1>eBay Price Wizard</h1>
+<p class="notice"><strong>Synthetic test fixture — not an eBay listing.</strong><br>
+This page runs the actual content script on sample data. No listing is published
+or modified. It does not validate compatibility with the live eBay editor.</p>
+<p>Try recorder £100, camera £20 and 2TB £50: four cameras should total £230.
+Set promotional input 10 for £261.36. Use Preview before Run.</p>
+<form onsubmit="event.preventDefault(); document.getElementById('submission').textContent='Unexpected form submission';">
+<table><thead><tr><th>NVR</th><th>HDD</th><th>Camera</th><th>Price</th><th>SKU</th></tr></thead>
+<tbody>
+<tr><td>8 channel</td><td>2TB</td><td>4 cameras</td><td><input type="text" aria-label="Price row 1"></td><td><input type="text" aria-label="SKU row 1"></td></tr>
+<tr><td>8 channel</td><td>No HDD</td><td>No Camera</td><td><input type="text" aria-label="Price row 2"></td><td><input type="text" aria-label="SKU row 2"></td></tr>
+<tr><td>8 channel</td><td>3TB</td><td>2 cameras</td><td><input type="text" aria-label="Price row 3"></td><td><input type="text" aria-label="SKU row 3"></td></tr>
+<tr><td>8 channel</td><td>2TB</td><td>4 cameras</td><td><input type="text" aria-label="Price row 4" value="999.99"></td><td><input type="text" aria-label="SKU row 4" value="EXISTING-SAMPLE"></td></tr>
+</tbody></table>
+<p id="submission">No form submission.</p>
+</form>
+<p><a href="USER_GUIDE.html">User guide</a> · All values on this page are synthetic.</p>
+</main>
+<script src="content.js"></script>
+</html>
